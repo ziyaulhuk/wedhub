@@ -1,14 +1,154 @@
+<!--
+  Generated template for the HomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
-  </ion-navbar>
+
+  <!-- <ion-navbar>
+    <ion-title>home</ion-title>
+  </ion-navbar> -->
+
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+<ion-content nopadding style="background: #171717;">
+  <div id="gui"></div>
+  <div id="canvas-container" #canvas>
+    <div id="mountains2"></div>
+    <div id="mountains1"></div>
+    <div id="skyline"></div>
+  </div>
+
+  <!-- <ion-grid class="overlay" justify-content-center text-center>
+    <ion-row align-items-center>
+      <p>git init (Invite)</p>
+    </ion-row>
+    <ion-row align-items-center>
+      <p>git clone "Marriage://19Aug2018/11AM/12PM"</p>
+    </ion-row>
+    <ion-row align-items-center>
+      <p>git add "ZIYAUL HUK"</p>
+    </ion-row>
+    <ion-row align-items-center>
+      <p>git add "THAIEBA ASHRAF"</p>
+    </ion-row>
+    <ion-row align-items-center>
+      <p>git commit -m "Love And Happiness"</p>
+    </ion-row>
+    <ion-row align-items-center>
+      <p>git merge "Rest of the Life"</p>
+    </ion-row>
+    <ion-row align-items-center>
+      <p>git push --tags "Together"</p>
+    </ion-row>
+    <ion-row align-items-center>
+      <p>git pull "Friends and Family"</p>
+    </ion-row>
+    <ion-row align-items-center>
+      <p>git reset --hard "Differences"</p>
+    </ion-row>
+    <ion-row align-items-center>
+      <p>git push "Your Presence and Prayers"</p>
+    </ion-row>
+    <ion-row align-items-center>
+      <p>git push --tags "Together"</p>
+    </ion-row>
+    <ion-row align-items-center>
+      <p>git remote add origin "Jamia Masjid"</p>
+    </ion-row>
+    <ion-row align-items-center>
+      <p>git remote -v Kalathur - Perambalur</p>
+    </ion-row>
+  </ion-grid> -->
+
+
+  <ion-grid class="overlay">
+    <ion-row justify-content-center align-items-center style="height: 100%">
+      <div class="separate">
+        <span>
+          git init
+          <!-- <span style="float: right;">
+          </span> -->
+          <!-- <button clear ion-button color="light" icon-start float-right>
+            <ion-icon color="light" style="font-size: 20px;" name="help-circle"></ion-icon>
+          </button> -->
+          <p style="font-weight: bold;color: ivory;">( INVITATION )</p>
+        </span>
+        <span>
+          git clone
+          <p>"Marriage://19Aug2018/11AM/12PM"</p>
+        </span>
+
+      </div>
+      <div class="separate">
+        <span>
+          git add
+          <p class="text-bold">"ZIYAUL HUK HAYATH BASHA"&nbsp;&nbsp;</p>
+        </span>
+        <span>
+          git add
+          <p class="text-bold">"THAIEBA ASHRAF ALI"&nbsp;&nbsp;</p>
+        </span>
+      </div>
+      <div class="separate">
+        <span>
+          git commit -m
+          <p>"Love And Happiness"</p>
+        </span>
+        <span>
+          git merge
+          <p>"Rest of the Life"</p>
+        </span>
+        <span>
+          git push --tags
+          <p>"Together"</p>
+        </span>
+      </div>
+      <div class="separate">
+        <span>
+          git pull
+          <p>"Friends and Family"</p>
+        </span>
+        <span>
+          git reset --hard
+          <p>"Differences"</p>
+        </span>
+        <span>
+          git push
+          <p>"Your Presence and Prayers"</p>
+        </span>
+      </div>
+      <br>
+      <div class="separate">
+        <span>
+          git remote add origin
+          <p>"Jamia Masjid"</p>
+        </span>
+        <span>
+          git remote -v
+          <p>Kalathur - Perambalur</p>
+        </span>
+      </div>
+      <div align="center">
+        <button no-padding clear ion-button color="light" icon-start (click)="ShareInvite()">
+          <ion-icon name="git-branch"></ion-icon>
+          Share Invite
+        </button>
+        <button clear ion-button color="light" icon-start (click)="CallMobile()">
+          <ion-icon name="call"></ion-icon>
+          Contact
+        </button>
+        <button clear ion-button color="light" icon-start (click)="LauchNavigate()">
+          <ion-icon name="compass"></ion-icon>
+          Directions
+        </button>
+        <button clear ion-button color="light" icon-start (click)="SendRSVP()">
+          <ion-icon name="paper-plane"></ion-icon>
+          For RSVP
+        </button>
+      </div>
+    </ion-row>
+  </ion-grid>
 </ion-content>
