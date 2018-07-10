@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { LoginProvider } from '../../providers/login/login';
 import { CommonProvider } from '../../providers/common/common';
-import { FormGroup, FormControl, FormBuilder, Validators, NgForm } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 /**
  * Generated class for the LoginPage page.
  *
@@ -19,7 +19,7 @@ export class LoginPage {
   loginForm: FormGroup;
   Name: string = "";
   Email: string = "";
-  Mobile: Number = 0;
+  Mobile: Number = null;
 
   constructor(
     public platform: Platform,
@@ -48,9 +48,11 @@ export class LoginPage {
     var user = {
       "name": this.Name,
       "mobile": this.Mobile,
-      "email": this.Email
+      "email": this.Email,
+      "created": new Date().toISOString()
     };
     this.loginProvider.saveLogin(user);
+    this.commonProvider.addLoginData(user);
     this.commonProvider.dismissLoading();
     this.navCtrl.setRoot("HomePage");
   }

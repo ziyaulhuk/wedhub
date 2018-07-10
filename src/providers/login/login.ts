@@ -15,9 +15,27 @@ export class LoginProvider {
   }
 
   loginData = null;
+  RSVP: boolean = null;
   saveLogin(data) {
     this.loginData = JSON.stringify(data);
     this.storage.set("user", data);
+  }
+
+  saveRSVPStatus(data) {
+    this.RSVP = data;
+    this.storage.set("RSVP", data);
+  }
+
+  getRSVPStatus() {
+    if (this.RSVP !== null) {
+      let self = this;
+      return new Promise(function (resolve, reject) {
+        resolve(self.RSVP);
+      });
+    }
+    else {
+      return this.storage.get("RSVP");
+    }
   }
 
   clearLogin() {

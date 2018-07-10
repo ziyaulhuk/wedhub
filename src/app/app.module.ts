@@ -17,6 +17,7 @@ import { SocialSharing } from '@ionic-native/social-sharing';
 import { LaunchNavigator } from '@ionic-native/launch-navigator';
 import { AngularFireModule } from "angularfire2";
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+// import { InAppBrowser } from '@ionic-native/in-app-browser';
 // import { AndroidPermissions } from '@ionic-native/android-permissions'
 export const firebaseConfig = {
   apiKey: "AIzaSyDg1VyaPO41Pm4ivsK0TemrACoDd2vYzv0",
@@ -57,6 +58,7 @@ export const firebaseConfig = {
     CallNumber,
     SocialSharing,
     LaunchNavigator,
+    // InAppBrowser,
     // AndroidPermissions,
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     LoginProvider,
