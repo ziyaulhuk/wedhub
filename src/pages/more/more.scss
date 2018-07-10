@@ -1,0 +1,24 @@
+page-more {
+    .card-bg{
+        background: rgb(252, 241, 222)
+    }
+    .heart {
+        font-size: 18px;
+        color: rgb(243, 13, 13);
+        animation: beat .25s infinite;
+        transform-origin: center;
+    }
+    
+    /* Heart beat animation */
+    @keyframes beat{
+        to { transform: scale(1.1); }
+    }
+
+    .wed-names{
+        padding-top: 1%; 
+        p{
+            font-weight: bolder;
+            font-size: 18px;
+        }
+    }
+}

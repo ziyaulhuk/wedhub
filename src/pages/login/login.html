@@ -18,7 +18,7 @@
                 <ion-label>
                   <ion-icon name="person"></ion-icon>
                 </ion-label>
-                <ion-input type="text" placeholder="Name" formControlName='name'></ion-input>
+                <ion-input type="text" placeholder="Name" formControlName='name' [(ngModel)]="Name"></ion-input>
               </ion-item>
               <div class="error" *ngIf="loginForm.controls['name'].touched && !loginForm.controls['name'].valid">
                 <span *ngIf="loginForm.controls['name'].hasError('required') ">
@@ -35,7 +35,7 @@
                 <ion-label>
                   <ion-icon name="mail"></ion-icon>
                 </ion-label>
-                <ion-input type="email" placeholder="Email" formControlName='email'></ion-input>
+                <ion-input type="email" placeholder="Email" formControlName='email' [(ngModel)]="Email"></ion-input>
               </ion-item>
               <div class="error" *ngIf="loginForm.controls['email'].touched && !loginForm.controls['email'].valid">
                 <span *ngIf="loginForm.controls['email'].hasError('required')">
@@ -49,7 +49,7 @@
                 <ion-label>
                   <ion-icon name="call"></ion-icon>
                 </ion-label>
-                <ion-input type="tel" maxlength="10" placeholder="Mobile" formControlName='mobile'></ion-input>
+                <ion-input type="tel" maxlength="10" placeholder="Mobile" formControlName='mobile' [(ngModel)]="Mobile"></ion-input>
               </ion-item>
               <div class="error" *ngIf="loginForm.controls['mobile'].touched && !loginForm.controls['mobile'].valid">
                 <span *ngIf="loginForm.controls['mobile'].hasError('required') ">

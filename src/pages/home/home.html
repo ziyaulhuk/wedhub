@@ -132,14 +132,18 @@
         </span>
       </div>
       <div align="center">
-        <button no-padding clear ion-button color="light" icon-start (click)="ShareInvite()">
-          <ion-icon name="git-branch"></ion-icon>
-          Share Invite
+        <button no-padding clear ion-button color="light" icon-start (click)="More()">
+          <ion-icon name="list-box"></ion-icon>
+          More Details
         </button>
         <button clear ion-button color="light" icon-start (click)="CallMobile()">
           <ion-icon name="call"></ion-icon>
           Contact
         </button>
+        <!-- <button clear ion-button color="light" icon-start (click)="OpenWhatsapp()">
+          <ion-icon name="logo-whatsapp"></ion-icon>
+          Text
+        </button> -->
         <button clear ion-button color="light" icon-start (click)="LauchNavigate()">
           <ion-icon name="compass"></ion-icon>
           Directions
@@ -147,6 +151,10 @@
         <button clear ion-button color="light" icon-start (click)="SendRSVP()">
           <ion-icon name="paper-plane"></ion-icon>
           For RSVP
+        </button>
+        <button no-padding clear ion-button color="light" icon-start (click)="ShareInvite()">
+          <ion-icon name="git-branch"></ion-icon>
+          Share Invite
         </button>
       </div>
     </ion-row>

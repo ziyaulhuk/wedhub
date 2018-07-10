@@ -15,6 +15,9 @@ export interface Note {
   name: string;
   email: string;
   mobile: string;
+  attend: string;
+  accomodation: string;
+  count: string;
   created: string;
 }
 
@@ -25,11 +28,13 @@ export class CommonProvider {
     private alertCtrl: AlertController,
     private toastCtrl: ToastController,
     private loadingCtrl: LoadingController,
-    private db: AngularFireDatabase
+    public db: AngularFireDatabase
   ) {
     console.log('Hello CommonProvider Provider');
   }
   private wedListRef = this.db.list<Note>('wed-list');
+  private loginListRef = this.db.list<Note>('login-list');
+
   presentAlert(title, msg) {
     let alert = this.alertCtrl.create({
       title: title,
@@ -39,13 +44,22 @@ export class CommonProvider {
     });
     alert.present();
   }
+
+  addLoginData(data) {
+    this.db.database.goOnline();
+    this.loginListRef.push(data);
+    this.db.database.goOffline();
+  }
+
   addData(data) {
+    this.db.database.goOnline();
     this.wedListRef.push(data);
   }
+
   presentToast(message) {
     let toast = this.toastCtrl.create({
       message: message,
-      duration: 3000,
+      duration: 5000,
       position: 'bottom',
       cssClass: 'center-text'
     });

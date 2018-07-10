@@ -1,6 +1,6 @@
 {
   "name": "WedHub",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "author": "Ziyaul Huk",
   "homepage": "https://www.facebook.com/ziyaulhuk12",
   "private": true,
@@ -36,6 +36,7 @@
     "cordova-plugin-calendar": "^5.1.2",
     "cordova-plugin-device": "^2.0.2",
     "cordova-plugin-dialogs": "^2.0.1",
+    "cordova-plugin-inappbrowser": "^3.0.0",
     "cordova-plugin-ionic-keyboard": "^2.0.5",
     "cordova-plugin-ionic-webview": "^1.1.19",
     "cordova-plugin-splashscreen": "^5.0.2",
@@ -46,11 +47,11 @@
     "fireworks-canvas": "^2.2.0",
     "ionic-angular": "3.9.2",
     "ionicons": "3.0.0",
+    "mx.ferreyra.callnumber": "~0.0.2",
     "rxjs": "5.5.11",
     "sw-toolbox": "3.6.0",
     "uk.co.workingedge.phonegap.plugin.launchnavigator": "^4.2.1",
-    "zone.js": "0.8.26",
-    "mx.ferreyra.callnumber": "~0.0.2"
+    "zone.js": "0.8.26"
   },
   "devDependencies": {
     "@ionic/app-scripts": "3.1.10",
@@ -69,7 +70,8 @@
       "cordova-plugin-x-socialsharing": {},
       "uk.co.workingedge.phonegap.plugin.launchnavigator": {
         "OKHTTP_VERSION": "3.+"
-      }
+      },
+      "cordova-plugin-inappbrowser": {}
     },
     "platforms": [
       "android"
