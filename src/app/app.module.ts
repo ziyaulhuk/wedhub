@@ -20,12 +20,12 @@ import { AngularFireDatabaseModule } from 'angularfire2/database';
 // import { InAppBrowser } from '@ionic-native/in-app-browser';
 // import { AndroidPermissions } from '@ionic-native/android-permissions'
 export const firebaseConfig = {
-  apiKey: "REDACTED_FIREBASE_API_KEY",
-  authDomain: "REDACTED_PROJECT_ID.firebaseapp.com",
-  databaseURL: "https://REDACTED_PROJECT_ID.firebaseio.com",
-  projectId: "REDACTED_PROJECT_ID",
-  storageBucket: "REDACTED_PROJECT_ID.appspot.com",
-  messagingSenderId: "REDACTED_SENDER_ID"
+  apiKey: "",
+  authDomain: "",
+  databaseURL: "",
+  projectId: "",
+  storageBucket: "",
+  messagingSenderId: ""
 };
 
 @NgModule({
