@@ -12,6 +12,7 @@ const MAPS_HOME_URL = `https://www.google.com/maps/search/?api=1&query=${encodeU
 const MAPS_PLACE_URL =
   'https://www.google.com/maps/place/Thirumandurai+Toll+Plaza/@11.3977011,78.991538,17.25z/data=!4m14!1m7!3m6!1s0x3bab16ab5d87423f:0x93bade66f788f789!2sjamia+masjid,+v+kalathur!8m2!3d11.4003856!4d78.9302402!16s%2Fg%2F11cm_8tg74!3m5!1s0x3bab166d8edad06f:0x5e936f8b2b7a0519!8m2!3d11.3968776!4d78.9935508!16s%2Fg%2F11c1nrfkl8?entry=ttu&g_ep=EgoyMDI2MTAxMy4wIKXMDSoASAFQAw%3D%3D';
 const PLAY_STORE_URL = 'https://play.google.com/store/apps/details?id=com.ziyaul.wedhub';
+const GITHUB_REPO_URL = 'https://github.com/ziyaulhuk/wedhub';
 const SHARE_TEXT =
   'Ziyaul Weds Thaieba\nYou are invited. Consider this as Our Personal Invite.\nRequest Your Esteemed Presence on Our Wedding Day.';
 
@@ -101,20 +102,19 @@ async function shareInvite(): Promise<void> {
 // ---------------------------------------------------------------------------
 const homeView = document.getElementById('view-home') as HTMLElement;
 const detailsView = document.getElementById('view-details') as HTMLElement;
+const storyView = document.getElementById('view-story') as HTMLElement;
 
-function showDetails(): void {
-  homeView.classList.add('hidden');
-  detailsView.classList.remove('hidden');
-}
-
-function showHome(): void {
-  detailsView.classList.add('hidden');
-  homeView.classList.remove('hidden');
+function showView(name: 'home' | 'details' | 'story'): void {
+  const views: Record<string, HTMLElement> = { home: homeView, details: detailsView, story: storyView };
+  for (const [id, view] of Object.entries(views)) {
+    view.classList.toggle('hidden', id !== name);
+  }
 }
 
 function onHashChange(): void {
-  if (window.location.hash === '#/details') showDetails();
-  else showHome();
+  if (window.location.hash === '#/details') showView('details');
+  else if (window.location.hash === '#/story') showView('story');
+  else showView('home');
 }
 
 // ---------------------------------------------------------------------------
@@ -132,18 +132,26 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('btn-back')?.addEventListener('click', () => {
     window.location.hash = '#/';
   });
+  document.getElementById('btn-back-story')?.addEventListener('click', () => {
+    window.history.back();
+  });
+  document.getElementById('link-github')?.addEventListener('click', (e) => {
+    e.preventDefault();
+    void openMaps(GITHUB_REPO_URL);
+  });
   document.getElementById('link-map')?.addEventListener('click', (e) => {
     e.preventDefault();
     void openMaps(MAPS_PLACE_URL);
   });
 
-  // Android hardware back button: details screen -> home, home -> exit app.
+  // Android hardware back button: details -> home, story -> details; only on the
+  // home screen does back exit the app.
   if (Capacitor.isNativePlatform()) {
     void App.addListener('backButton', () => {
-      if (window.location.hash === '#/details') {
-        window.history.back();
-      } else {
+      if (window.location.hash === '#/' || window.location.hash === '') {
         void App.exitApp();
+      } else {
+        window.history.back();
       }
     });
   }

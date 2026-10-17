@@ -262,6 +262,25 @@ body {
   padding-top: 8px;
 }
 
+/* ------------------------------ STORY VIEW ------------------------------ */
+
+#view-story {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #171717;
+}
+
+.story-link {
+  text-align: center;
+  padding: 4px 0 8px;
+  font-size: 13px;
+}
+
+.story-link a {
+  color: gray;
+  text-decoration: none;
+}
+
 /* --------------------------------- TOAST -------------------------------- */
 
 .toast {

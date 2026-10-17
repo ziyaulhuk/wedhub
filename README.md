@@ -1,15 +1,43 @@
 # WedHub — Ziyaul Weds Thaieba
 
-Wedding invitation app for **Ziyaul Huk ♥ Thaieba Ashraf** (19 August 2018, Jamia Masjid, V Kalathur, Perambalur).
+## Why this exists
 
-This is a modern rewrite of the original Ionic 3 / Cordova / Firebase app. All Firebase
-dependencies have been removed — it is now a fully offline information app:
+This is the app I built for my own wedding (19 August 2018) and published on the
+[Google Play Store](https://play.google.com/store/apps/details?id=com.ziyaul.wedhub).
+Instead of paper invitation cards, the invite *was* an app: a Bluetooth beacon pushed
+the Play Store install link directly to guests' phones, one tap away from installing.
+
+<p align="center">
+  <img src="docs/fireworks.gif" alt="The home screen — fireworks over the git-themed invitation" width="320" />
+</p>
+
+## The original app (2018)
+
+The first version was an Ionic 3 / Cordova app backed by Firebase:
+
+- **RSVP** — a "For RSVP" button asked *"Will you be able to make it?"*; answers were
+  stored in Firebase, guests could update them later, and the app nudged anyone who
+  opened it without having responded.
+- **Calendar invite** — on launch it added the wedding ("Ziyaul Weds Thaieba", Jamia
+  Masjid, V Kalathur) to the guest's phone calendar, checking first so it was never
+  added twice.
+- **Reminders** — that calendar event carried native alerts one day and two hours before
+  the wedding, so every guest's phone reminded them on the day itself.
+
+It is preserved untouched in [`legacy/`](legacy/).
+
+## The modern rewrite (this repo)
+
+A few years later I rewrote it from scratch in vanilla TypeScript + Vite + Capacitor.
+The rewritten app is purely one-way — it gives information and asks nothing back (no
+accounts, no RSVPs), so there was no longer any reason to keep Firebase: every Firebase
+dependency was removed, which also means the app now **collects zero data** from users
+and works fully offline:
 
 - **Home**: fireworks background with the git-themed invitation and action buttons
   (Contact → dialer, Directions → Google Maps, Share Invite → system share sheet)
-- **Details**: invitation card, directions, and "Marriage in ISLAM" verses
-
-The original project is preserved untouched in [`legacy/`](legacy/).
+- **Details**: invitation card, directions, "Marriage in ISLAM" verses, and the story
+  behind this app
 
 ## Tech stack
 
