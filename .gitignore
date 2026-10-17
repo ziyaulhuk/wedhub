@@ -9,6 +9,7 @@ android/local.properties
 
 # Signing secrets - NEVER commit these
 *.jks
+*.pem
 REDACTED_KEYSTORE_FILE
 release-signing.properties
 android/key.properties
