@@ -1,0 +1,279 @@
+/* ===========================================================================
+   Ziyaul Weds Thaieba - global styles
+   Faithful to the original Ionic 3 theme: dark #171717, bisque text,
+   azure overlay and the color-cycling "text-bold" animation.
+   =========================================================================== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  background: #171717;
+  color: bisque;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  overscroll-behavior: none;
+}
+
+.view {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100dvh;
+}
+
+.hidden {
+  display: none !important;
+}
+
+/* ------------------------------- HOME VIEW ------------------------------ */
+
+#canvas-container {
+  background: #000 url('./assets/imgs/bg.jpg') center / cover no-repeat;
+  height: 100%;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+}
+
+/* fireworks-canvas appends its canvas as the last child of the container */
+#canvas-container canvas {
+  position: absolute;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 2;
+}
+
+#skyline {
+  background: url('./assets/imgs/skyline.png') repeat-x 50% 0;
+  bottom: 0;
+  height: 135px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+#mountains1 {
+  background: url('./assets/imgs/mountains1.png') repeat-x 40% 0;
+  bottom: 0;
+  height: 200px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+#mountains2 {
+  background: url('./assets/imgs/mountains2.png') repeat-x 30% 0;
+  bottom: 0;
+  height: 250px;
+  left: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+
+.overlay {
+  color: azure;
+  position: fixed;
+  inset: 0;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: calc(24px + env(safe-area-inset-top)) 16px calc(24px + env(safe-area-inset-bottom));
+}
+
+.git-line {
+  color: bisque;
+  text-align: center;
+  font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, monospace;
+  font-size: clamp(12px, 3.4vw, 17px);
+  line-height: 1.9;
+  margin-bottom: 0.6em;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.8);
+}
+
+.git-line .cmd {
+  display: block;
+  color: #b4eb9b;
+}
+
+.git-line .arg {
+  display: block;
+}
+
+/* Original keyframe animation from home.scss (color cycling) */
+@keyframes example {
+  0%   { color: bisque; }
+  10%  { color: #b4eb9b; }
+  20%  { color: azure; }
+  30%  { color: #d35400; }
+  40%  { color: bisque; }
+  50%  { color: #eeb9ee; }
+  60%  { color: bisque; }
+  70%  { color: cornsilk; }
+  80%  { color: #f1c40f; }
+  90%  { color: #a8cbe2; }
+  100% { color: pink; }
+}
+
+.text-bold {
+  font-weight: bolder;
+  animation: example 4s infinite alternate;
+}
+
+/* -------------------------------- BUTTONS ------------------------------- */
+
+.buttons {
+  margin-top: 1.6em;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pill {
+  appearance: none;
+  border: 1px solid rgba(245, 245, 220, 0.55);
+  background: rgba(0, 0, 0, 0.35);
+  color: bisque;
+  font-size: 15px;
+  padding: 10px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  backdrop-filter: blur(2px);
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.pill:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.pill:active {
+  transform: scale(0.96);
+}
+
+/* ------------------------------ DETAILS VIEW ---------------------------- */
+
+#view-details {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  background: #171717;
+}
+
+.details-header {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: calc(10px + env(safe-area-inset-top)) 16px 10px;
+  background: rgba(23, 23, 23, 0.95);
+  border-bottom: 1px solid rgba(245, 245, 220, 0.15);
+}
+
+.details-header h1 {
+  font-size: 18px;
+  font-weight: 600;
+  color: bisque;
+}
+
+.back-btn {
+  appearance: none;
+  border: none;
+  background: transparent;
+  color: #d35400;
+  font-size: 26px;
+  line-height: 1;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.cards {
+  padding: 16px 16px calc(24px + env(safe-area-inset-bottom));
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.card {
+  background: #232323;
+  border: 1px solid rgba(245, 245, 220, 0.12);
+  border-radius: 10px;
+  padding: 18px 16px;
+}
+
+.card h2 {
+  font-weight: bold;
+  text-align: center;
+  color: #f1c40f;
+  margin-bottom: 12px;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+}
+
+.card p {
+  color: bisque;
+  text-align: center;
+  line-height: 1.7;
+  font-size: 14.5px;
+  margin-bottom: 8px;
+}
+
+.wed-names {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 10px 0;
+}
+
+.wed-names p {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.heart {
+  color: #e74c3c;
+  font-size: 20px;
+}
+
+.map-link {
+  color: #d35400 !important;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.app-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: gray;
+  font-size: 12px;
+  padding-top: 8px;
+}
+
+/* --------------------------------- TOAST -------------------------------- */
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: calc(32px + env(safe-area-inset-bottom));
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  color: bisque;
+  border: 1px solid rgba(245, 245, 220, 0.3);
+  padding: 10px 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  z-index: 10;
+}
