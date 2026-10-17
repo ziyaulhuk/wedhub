@@ -56,17 +56,6 @@ Outputs:
 - `android/app/build/outputs/bundle/release/app-release.aab` → **upload this to Google Play**
 - `android/app/build/outputs/apk/release/app-release.apk` → install on a device for testing
 
-
-
-
-
-
-
-
-
-
-
-
 ## Notes
 
 - The old app's login/RSVP/calendar features depended on Firebase and were removed.
